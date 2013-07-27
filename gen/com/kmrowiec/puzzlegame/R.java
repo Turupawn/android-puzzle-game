@@ -24,8 +24,14 @@ public final class R {
         public static final int ic_launcher=0x7f020002;
         public static final int no_sign=0x7f020003;
         public static final int pause_menu_background=0x7f020004;
-        public static final int test2=0x7f020005;
-        public static final int test3=0x7f020006;
+        public static final int stage1=0x7f020005;
+        public static final int stage2=0x7f020006;
+        public static final int stage3=0x7f020007;
+        public static final int stage4=0x7f020008;
+        public static final int stage5=0x7f020009;
+        public static final int stage6=0x7f02000a;
+        public static final int test2=0x7f02000b;
+        public static final int test3=0x7f02000c;
     }
     public static final class id {
         public static final int LinearLayout1=0x7f090000;
@@ -33,22 +39,26 @@ public final class R {
         public static final int backgroundLayout=0x7f090003;
         public static final int button1=0x7f090009;
         public static final int button2=0x7f09000a;
-        public static final int button4=0x7f09000d;
-        public static final int button5=0x7f09000e;
-        public static final int button6=0x7f09000f;
+        public static final int button3=0x7f09000f;
+        public static final int button7=0x7f090010;
+        public static final int button8=0x7f090011;
         public static final int centerLayout=0x7f090004;
-        public static final int gallery1=0x7f090011;
+        public static final int gallery1=0x7f090014;
         public static final int inGameViewSwitcher=0x7f090002;
         public static final int mainMenuViewSwitcher=0x7f090001;
-        public static final int menu_settings=0x7f090015;
+        public static final int menu_settings=0x7f090019;
         public static final int newGameMenuGameSizeSpinner=0x7f09000b;
-        public static final int pause_menu=0x7f090012;
-        public static final int pausemenu_quitButton=0x7f090014;
-        public static final int pausemenu_resumeButton=0x7f090013;
-        public static final int playButton=0x7f090010;
+        public static final int pause_menu=0x7f090016;
+        public static final int pausemenu_quitButton=0x7f090018;
+        public static final int pausemenu_resumeButton=0x7f090017;
+        public static final int playButton=0x7f090015;
         public static final int previewButton=0x7f090005;
         public static final int previewImageView=0x7f090006;
         public static final int selectedImageView=0x7f09000c;
+        public static final int tableRow1=0x7f09000d;
+        public static final int tableRow2=0x7f09000e;
+        public static final int tableRow3=0x7f090012;
+        public static final int tableRow4=0x7f090013;
         public static final int textView1=0x7f090008;
     }
     public static final class layout {

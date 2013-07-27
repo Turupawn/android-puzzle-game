@@ -15,6 +15,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.provider.MediaStore.Audio.Media;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -46,6 +47,8 @@ public class MainMenuActivity extends Activity {
 	
 	private Bitmap selectedImage;
 	private Uri imageUri;
+	
+	public static int selected_image_int = -1;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -83,6 +86,7 @@ public class MainMenuActivity extends Activity {
     
     public void pickImageOnClick(View view){
     	shouldSwitch = false;
+    	Media m = new Media();
     	Intent i = new Intent(Intent.ACTION_PICK,
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
     	startActivityForResult(i, PHOTO_FROM_MEMORY_REQUESTED); 
@@ -145,22 +149,97 @@ public class MainMenuActivity extends Activity {
     
     
     public void playOnClick(View View){
+    	
     	Intent intent = new Intent(this, PuzzleActivity.class);
+    	
     	String[] gameSizes = getResources().getStringArray(R.array.gamesizes);
        	intent.putExtra(EXTRA_GAMESIZE, gameSizes[gameSizeSpinner.getSelectedItemPosition()]);
     	intent.putExtra(EXTRA_IMGURI, imageUri);
     	
     	int orientation;	//Determining screen orientation.
+    	
+//    	selectedImage = BitmapFactory.decodeFile("assets/test.png");
+//		ImageView iv = (ImageView) findViewById(R.id.selectedImageView);
+//		iv.setImageDrawable(new BitmapDrawable(selectedImage));
+    	
+    	selectedImage = BitmapFactory.decodeResource(getResources(),R.drawable.test2);
+		
     	orientation = (selectedImage.getWidth()>selectedImage.getHeight()) ? 
     			GameBoard.ORIENTATION_HORIZONTAL : GameBoard.ORIENTATION_PORTRAIT;
     	intent.putExtra(EXTRA_BOARD_ORIENTATION, orientation);
     	
-//    	String str = orientation == 0 ? "PORTRAIT" : "HORIZONTAL";
-//    	Log.d("KAMIL", "Orientation : " + str);
+    	String str = orientation == 0 ? "PORTRAIT" : "HORIZONTAL";
+    	Log.d("KAMIL", "Orientation : " + str);
     	
     	shouldSwitch = true;
     	startActivity(intent);
     	
+    }
+    
+    public void selectStage1(View View){
+    	selectedImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage1);
+    	
+    	selected_image_int=1;
+    	
+		ImageView iv = (ImageView) findViewById(R.id.selectedImageView);
+		iv.setImageDrawable(new BitmapDrawable(selectedImage));
+		
+		playButton.setEnabled(true);
+    }
+    
+    public void selectStage2(View View){
+    	selectedImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage2);
+    	
+    	selected_image_int=2;
+    	
+		ImageView iv = (ImageView) findViewById(R.id.selectedImageView);
+		iv.setImageDrawable(new BitmapDrawable(selectedImage));
+		
+		playButton.setEnabled(true);
+    }
+    
+    public void selectStage3(View View){
+    	selectedImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage3);
+    	
+    	selected_image_int=3;
+    	
+		ImageView iv = (ImageView) findViewById(R.id.selectedImageView);
+		iv.setImageDrawable(new BitmapDrawable(selectedImage));
+		
+		playButton.setEnabled(true);
+    }
+    
+    public void selectStage4(View View){
+    	selectedImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage4);
+    	
+    	selected_image_int=4;
+    	
+		ImageView iv = (ImageView) findViewById(R.id.selectedImageView);
+		iv.setImageDrawable(new BitmapDrawable(selectedImage));
+		
+		playButton.setEnabled(true);
+    }
+    
+    public void selectStage5(View View){
+    	selectedImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage5);
+    	
+    	selected_image_int=5;
+    	
+		ImageView iv = (ImageView) findViewById(R.id.selectedImageView);
+		iv.setImageDrawable(new BitmapDrawable(selectedImage));
+		
+		playButton.setEnabled(true);
+    }
+    
+    public void selectStage6(View View){
+    	selectedImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage6);
+    	
+    	selected_image_int=6;
+    	
+		ImageView iv = (ImageView) findViewById(R.id.selectedImageView);
+		iv.setImageDrawable(new BitmapDrawable(selectedImage));
+		
+		playButton.setEnabled(true);
     }
 
     
@@ -196,7 +275,9 @@ public class MainMenuActivity extends Activity {
 			
 			//Opening the input stream and receiving Bitmap.
 			InputStream imageStream = getContentResolver().openInputStream(imageUri);
-			selectedImage = BitmapFactory.decodeStream(imageStream);
+			
+			//selectedImage = BitmapFactory.decodeStream(imageStream);
+			selectedImage = BitmapFactory.decodeResource(getResources(),R.drawable.test2);
 			
 //			BitmapFactory.Options opts = new BitmapFactory.Options();
 //			opts.inJustDecodeBounds = false;

@@ -98,17 +98,28 @@ public class PuzzleActivity extends Activity {
         		(RelativeLayout) findViewById(R.id.centerLayout), 
         		screenOrientation, this);
         
-        sourceImage = loadBitmapFromIntent();
+        if(MainMenuActivity.selected_image_int==1)
+        	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage1);
+        else if(MainMenuActivity.selected_image_int==2)
+        	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage2);
+        else if(MainMenuActivity.selected_image_int==3)
+        	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage3);
+        else if(MainMenuActivity.selected_image_int==4)
+        	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage4);
+        else if(MainMenuActivity.selected_image_int==5)
+        	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage5);
+        else if(MainMenuActivity.selected_image_int==6)
+        	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage6);
+        else
+        	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher);
+        
         
         ImageView preview = (ImageView) findViewById(R.id.previewImageView);
         preview.setImageBitmap(sourceImage);
         
         PuzzleCreator creator = new PuzzleCreator(sourceImage, board);
         board.loadTiles(creator.createPuzzle());
-        board.drawBoard();
-        
-        
-             
+        board.drawBoard();     
     }
 
     @Override
