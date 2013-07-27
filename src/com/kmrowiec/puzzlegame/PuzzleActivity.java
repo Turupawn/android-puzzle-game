@@ -3,6 +3,8 @@ package com.kmrowiec.puzzlegame;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
+import com.swarmconnect.SwarmActivity;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -24,7 +26,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ViewSwitcher;
 
-public class PuzzleActivity extends Activity {
+public class PuzzleActivity extends SwarmActivity {
 
 	public static final int DIALOG_PAUSED_ID = 44;
 	
