@@ -51,9 +51,9 @@ public class PuzzleCreator {
 		 */
 		private void shuffle(){						
 			//Now we simulate moving the tile.
-			int n = 50; // n - the number of moves 
+			int n = 1000; // n - the number of moves 
 			//For many tiles 50 is not enough.
-			if(outputBoardSize.equals(6, 10)) n = 100;
+			if(outputBoardSize.equals(12, 12)) n = 100;
 			
 			
 			// to control which one was previously selected

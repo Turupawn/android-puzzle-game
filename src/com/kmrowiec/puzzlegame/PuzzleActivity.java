@@ -43,6 +43,7 @@ public class PuzzleActivity extends SwarmActivity {
 	StopwatchView stop_watch_view;
 	
 	String game_size;
+	String character;
 	
 	private class PauseDialog extends Dialog implements android.view.View.OnClickListener{
 		
@@ -111,34 +112,160 @@ public class PuzzleActivity extends SwarmActivity {
         
         //Crating a game board.
         
+        if(MainMenuActivity.selected_image_int==1)
+        {
+        	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage1);
+        	character="Shizune";
+        }
+        else if(MainMenuActivity.selected_image_int==2)
+        {
+        	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage2);
+        	character="Misha";
+        }
+        else if(MainMenuActivity.selected_image_int==3)
+        {
+        	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage3);
+        	character="Emi";
+        }
+        else if(MainMenuActivity.selected_image_int==4)
+        {
+        	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage4);
+        	character="Rin";
+        }
+        else if(MainMenuActivity.selected_image_int==5)
+        {
+        	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage5);
+        	character="Hanako";
+        }
+        else if(MainMenuActivity.selected_image_int==6)
+        {
+        	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage6);
+        	character="Lilly";
+        }
+        else
+        {
+        	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher);
+        	character="";
+        }
+        
+        int leaderboard_id_specific=-1;
         int leaderboard_id = -1;
+        
         if(game_size.equals("easy modo"))
-        	leaderboard_id=10938;
-        else if(game_size.equals("small"))
-        	leaderboard_id=10940;
-        else if(game_size.equals("medium"))
-        	leaderboard_id=10942;
-        else if(game_size.equals("large"))
+        {
         	leaderboard_id=10944;
+        	
+        	if(character.equals("Shizune"))
+        	{
+        		leaderboard_id_specific=10984;
+        	}
+        	else if(character.equals("Misha"))
+        	{
+        		leaderboard_id_specific=10986;
+        	}
+        	else if(character.equals("Emi"))
+        	{
+        		leaderboard_id_specific=10988;
+        	}
+        	else if(character.equals("Rin"))
+        	{
+        		leaderboard_id_specific=10990;
+        	}
+        	else if(character.equals("Hanako"))
+        	{
+        		leaderboard_id_specific=10992;
+        	}
+        	else if(character.equals("Lilly"))
+        	{
+        		leaderboard_id_specific=10994;
+        	}
+        }
+        else if(game_size.equals("small"))
+        {
+        	leaderboard_id=10942;
+        	
+        	if(character.equals("Shizune"))
+        	{
+        		leaderboard_id_specific=10972;
+        	}else if(character.equals("Misha"))
+        	{
+        		leaderboard_id_specific=10974;
+        	}else if(character.equals("Emi"))
+        	{
+        		leaderboard_id_specific=10976;
+        	}else if(character.equals("Rin"))
+        	{
+        		leaderboard_id_specific=10978;
+        	}else if(character.equals("Hanako"))
+        	{
+        		leaderboard_id_specific=10980;
+        	}else if(character.equals("Lilly"))
+        	{
+        		leaderboard_id_specific=10982;
+        	}
+        }
+        else if(game_size.equals("medium"))
+        {
+        	leaderboard_id=10940;
+        	
+        	if(character.equals("Shizune"))
+        	{
+        		leaderboard_id_specific=10960;
+        	}
+        	else if(character.equals("Misha"))
+        	{
+        		leaderboard_id_specific=10962;
+        	}
+        	else if(character.equals("Emi"))
+        	{
+        		leaderboard_id_specific=10964;
+        	}
+        	else if(character.equals("Rin"))
+        	{
+        		leaderboard_id_specific=10966;
+        	}
+        	else if(character.equals("Hanako"))
+        	{
+        		leaderboard_id_specific=10968;
+        	}
+        	else if(character.equals("Lilly"))
+        	{
+        		leaderboard_id_specific=10970;
+        	}
+        }
+        else if(game_size.equals("large"))
+        {
+        	leaderboard_id=10938;
+        	
+        	if(character.equals("Shizune"))
+        	{
+        		leaderboard_id_specific=10946;
+        	}
+        	else if(character.equals("Misha"))
+        	{
+        		leaderboard_id_specific=10950;
+        	}
+        	else if(character.equals("Emi"))
+        	{
+        		leaderboard_id_specific=10952;
+        	}
+        	else if(character.equals("Rin"))
+        	{
+        		leaderboard_id_specific=10954;
+        	}
+        	else if(character.equals("Hanako"))
+        	{
+        		leaderboard_id_specific=10956;
+        	}
+        	else if(character.equals("Lilly"))
+        	{
+        		leaderboard_id_specific=10958;
+        	}
+        }
         
         board = new GameBoard(dimension,
         		(RelativeLayout) findViewById(R.id.centerLayout), 
-        		screenOrientation, this,stop_watch_view,leaderboard_id);
-        
-        if(MainMenuActivity.selected_image_int==1)
-        	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage1);
-        else if(MainMenuActivity.selected_image_int==2)
-        	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage2);
-        else if(MainMenuActivity.selected_image_int==3)
-        	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage3);
-        else if(MainMenuActivity.selected_image_int==4)
-        	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage4);
-        else if(MainMenuActivity.selected_image_int==5)
-        	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage5);
-        else if(MainMenuActivity.selected_image_int==6)
-        	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage6);
-        else
-        	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher);
+        		screenOrientation, this,stop_watch_view,leaderboard_id,leaderboard_id_specific);
         
         
         ImageView preview = (ImageView) findViewById(R.id.previewImageView);
@@ -172,12 +299,12 @@ public class PuzzleActivity extends SwarmActivity {
     	}
     	else if(str.equals(gameSizes[1]))
     	{
-    		size = new Dimension(3,5);
+    		size = new Dimension(4,6);
     		game_size = "small";
     	}
     	else if(str.equals(gameSizes[2]))
     	{
-    		size = new Dimension(4,7);
+    		size = new Dimension(8,12);
     		game_size = "medium";
     	}
     	else if(str.equals(gameSizes[3]))

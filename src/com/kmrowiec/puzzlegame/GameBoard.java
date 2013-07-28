@@ -43,14 +43,16 @@ public class GameBoard implements OnClickListener{
 	StopwatchView stop_watch_view;
 	
 	int leaderboard_id;
+	int leaderboard_id_specific;
 	
-	public GameBoard(Dimension gameSize, RelativeLayout scr, int orientation, Context con,StopwatchView stop_watch_view,int leaderboard_id){
+	public GameBoard(Dimension gameSize, RelativeLayout scr, int orientation, Context con,StopwatchView stop_watch_view,int leaderboard_id, int leaderboard_id_specific){
 		this.gameSize = gameSize;
 		this.screen = scr;
 		this.context = con;
 		this.orientation = orientation;
 		this.stop_watch_view=stop_watch_view;
 		this.leaderboard_id=leaderboard_id;
+		this.leaderboard_id_specific=leaderboard_id_specific;
 		
 		//If orientatnion is horizontal, we need to flip gameSize.
 		if(orientation==ORIENTATION_HORIZONTAL){
@@ -225,6 +227,7 @@ public class GameBoard implements OnClickListener{
 		if(isSolved()){
 			stop_watch_view.stop();
 			SwarmLeaderboard.submitScore(leaderboard_id, stop_watch_view.getScore());
+			SwarmLeaderboard.submitScore(leaderboard_id_specific, stop_watch_view.getScore());
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
 			builder.setMessage("You solved the puzzle! Congratulations!")
 			       .setCancelable(false)

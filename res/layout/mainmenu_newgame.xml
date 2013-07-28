@@ -51,53 +51,53 @@
 
             <Button
                 android:id="@+id/button1"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:onClick="selectStage1"
-                android:text="Stage 1" />
+                android:text="Shizune" />
 
             <Button
                 android:id="@+id/button1"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:onClick="selectStage2"
-                android:text="Stage 2" />
+                android:text="Misha" />
 
             <Button
                 android:id="@+id/button1"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:onClick="selectStage3"
-                android:text="Stage 3" />
+                android:text="Emi" />
 
         </TableRow>
 
         <TableRow
             android:id="@+id/tableRow2"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal" >
 
             <Button
                 android:id="@+id/button3"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:onClick="selectStage4"
-                android:text="Stage 4" />
+                android:text="Rin" />
 
             <Button
                 android:id="@+id/button7"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:onClick="selectStage5"
-                android:text="Stage 5" />
+                android:text="Hanako" />
 
             <Button
                 android:id="@+id/button8"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:onClick="selectStage6"
-                android:text="Stage 6" />
+                android:text="Lilly" />
 
         </TableRow>
 
