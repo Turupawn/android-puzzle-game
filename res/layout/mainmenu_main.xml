@@ -16,14 +16,6 @@
         android:textSize="40dp" />
 
     <Button
-        android:id="@+id/button1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:text="@string/mainmenu_resume"
-        android:textSize="30dp" />
-
-    <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,5 +23,12 @@
         android:onClick="newGameButtonOnClick"
         android:text="@string/mainmenu_newgame"
         android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="showLeaderboards"
+        android:text="Swarm" />
 
 </LinearLayout>

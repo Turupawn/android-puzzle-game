@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
+import android.*;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
@@ -27,6 +28,7 @@ import android.widget.ViewSwitcher;
 
 import com.swarmconnect.Swarm;
 import com.swarmconnect.SwarmActivity;
+import com.swarmconnect.SwarmLeaderboard;
 
 public class MainMenuActivity extends SwarmActivity {
 	
@@ -69,7 +71,7 @@ public class MainMenuActivity extends SwarmActivity {
         playButton = (Button) findViewById(R.id.playButton);
         playButton.setEnabled(false);
         
-        Swarm.init(this, 7122, "77dd6ffd7f996512f1433d79fe2b099a");
+        Swarm.init(this, 7122, "");
     }
 
     @Override
@@ -78,6 +80,10 @@ public class MainMenuActivity extends SwarmActivity {
         return true;
     }
 
+    public void showLeaderboards(View view){
+    	Swarm.showLeaderboards();
+    }
+    
     public void newGameButtonOnClick(View view){
     	menuViewSwitcher.showNext();
     	

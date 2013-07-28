@@ -15,6 +15,25 @@ public final class R {
         public static final int locations_nogps=0x7f060002;
     }
     public static final class attr {
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int paintColor=0x7f010000;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int textSize=0x7f010001;
     }
     public static final class color {
         public static final int blue_highlight=0x7f040001;
@@ -130,158 +149,159 @@ public final class R {
     }
     public static final class id {
         public static final int LinearLayout1=0x7f0a0000;
-        public static final int achievement_check=0x7f0a0081;
-        public static final int achievement_icon=0x7f0a0019;
-        public static final int backToGameButton=0x7f0a0007;
+        public static final int achievement_check=0x7f0a0082;
+        public static final int achievement_icon=0x7f0a001a;
+        public static final int backToGameButton=0x7f0a0008;
         public static final int backgroundLayout=0x7f0a0003;
-        public static final int benefits=0x7f0a002e;
-        public static final int birthday=0x7f0a006d;
-        public static final int block_holder=0x7f0a0023;
-        public static final int button1=0x7f0a0009;
+        public static final int benefits=0x7f0a002f;
+        public static final int birthday=0x7f0a006e;
+        public static final int block_holder=0x7f0a0024;
+        public static final int button1=0x7f0a000b;
         public static final int button2=0x7f0a000a;
-        public static final int button3=0x7f0a000f;
-        public static final int button7=0x7f0a0010;
-        public static final int button8=0x7f0a0011;
-        public static final int cancel=0x7f0a0038;
+        public static final int button3=0x7f0a0010;
+        public static final int button7=0x7f0a0011;
+        public static final int button8=0x7f0a0012;
+        public static final int cancel=0x7f0a0039;
         public static final int centerLayout=0x7f0a0004;
-        public static final int change_pass=0x7f0a008a;
-        public static final int clear_birthday=0x7f0a006c;
-        public static final int close=0x7f0a0044;
-        public static final int coins=0x7f0a0055;
-        public static final int coins_icon=0x7f0a007a;
-        public static final int confirm=0x7f0a0096;
-        public static final int confirm_error=0x7f0a0095;
-        public static final int confirm_password=0x7f0a0087;
-        public static final int create=0x7f0a002d;
-        public static final int current_password=0x7f0a0085;
-        public static final int date=0x7f0a0094;
-        public static final int desc=0x7f0a0036;
-        public static final int description=0x7f0a001c;
-        public static final int divider=0x7f0a008d;
-        public static final int download=0x7f0a0021;
-        public static final int edit_pic=0x7f0a0071;
-        public static final int element_holder=0x7f0a0024;
-        public static final int email=0x7f0a002c;
-        public static final int email_error=0x7f0a002b;
-        public static final int empty_list=0x7f0a0039;
-        public static final int extra=0x7f0a0033;
-        public static final int facebook=0x7f0a003c;
-        public static final int facebook_check=0x7f0a0057;
-        public static final int facebook_login=0x7f0a0062;
-        public static final int feature=0x7f0a001d;
-        public static final int footer=0x7f0a003b;
-        public static final int friend=0x7f0a0074;
-        public static final int gallery1=0x7f0a0014;
-        public static final int gender=0x7f0a006b;
-        public static final int gender_edit=0x7f0a0076;
-        public static final int gender_holder=0x7f0a0075;
-        public static final int geo=0x7f0a0078;
-        public static final int geo_edit=0x7f0a0079;
-        public static final int geo_holder=0x7f0a0077;
-        public static final int get_coins=0x7f0a008e;
-        public static final int google=0x7f0a007e;
-        public static final int google_check=0x7f0a007f;
-        public static final int google_login=0x7f0a0064;
-        public static final int guest=0x7f0a0067;
-        public static final int header=0x7f0a0041;
-        public static final int icon=0x7f0a0032;
-        public static final int image=0x7f0a0035;
+        public static final int change_pass=0x7f0a008b;
+        public static final int clear_birthday=0x7f0a006d;
+        public static final int close=0x7f0a0045;
+        public static final int coins=0x7f0a0056;
+        public static final int coins_icon=0x7f0a007b;
+        public static final int confirm=0x7f0a0097;
+        public static final int confirm_error=0x7f0a0096;
+        public static final int confirm_password=0x7f0a0088;
+        public static final int create=0x7f0a002e;
+        public static final int current_password=0x7f0a0086;
+        public static final int date=0x7f0a0095;
+        public static final int desc=0x7f0a0037;
+        public static final int description=0x7f0a001d;
+        public static final int divider=0x7f0a008e;
+        public static final int download=0x7f0a0022;
+        public static final int edit_pic=0x7f0a0072;
+        public static final int element_holder=0x7f0a0025;
+        public static final int email=0x7f0a002d;
+        public static final int email_error=0x7f0a002c;
+        public static final int empty_list=0x7f0a003a;
+        public static final int extra=0x7f0a0034;
+        public static final int facebook=0x7f0a003d;
+        public static final int facebook_check=0x7f0a0058;
+        public static final int facebook_login=0x7f0a0063;
+        public static final int feature=0x7f0a001e;
+        public static final int footer=0x7f0a003c;
+        public static final int friend=0x7f0a0075;
+        public static final int gallery1=0x7f0a0015;
+        public static final int gender=0x7f0a006c;
+        public static final int gender_edit=0x7f0a0077;
+        public static final int gender_holder=0x7f0a0076;
+        public static final int geo=0x7f0a0079;
+        public static final int geo_edit=0x7f0a007a;
+        public static final int geo_holder=0x7f0a0078;
+        public static final int get_coins=0x7f0a008f;
+        public static final int google=0x7f0a007f;
+        public static final int google_check=0x7f0a0080;
+        public static final int google_login=0x7f0a0065;
+        public static final int guest=0x7f0a0068;
+        public static final int header=0x7f0a0042;
+        public static final int icon=0x7f0a0033;
+        public static final int image=0x7f0a0036;
         public static final int inGameViewSwitcher=0x7f0a0002;
-        public static final int invite=0x7f0a0056;
-        public static final int iv_icon=0x7f0a0030;
-        public static final int last_seen=0x7f0a0073;
-        public static final int leaderboard_check=0x7f0a0082;
-        public static final int list=0x7f0a003a;
-        public static final int location=0x7f0a0070;
-        public static final int login=0x7f0a0066;
-        public static final int logo=0x7f0a0043;
-        public static final int logout=0x7f0a008b;
-        public static final int lost_password=0x7f0a0065;
-        public static final int mail=0x7f0a0054;
+        public static final int invite=0x7f0a0057;
+        public static final int iv_icon=0x7f0a0031;
+        public static final int last_seen=0x7f0a0074;
+        public static final int leaderboard_check=0x7f0a0083;
+        public static final int list=0x7f0a003b;
+        public static final int location=0x7f0a0071;
+        public static final int login=0x7f0a0067;
+        public static final int logo=0x7f0a0044;
+        public static final int logout=0x7f0a008c;
+        public static final int lost_password=0x7f0a0066;
+        public static final int mail=0x7f0a0055;
         public static final int mainMenuViewSwitcher=0x7f0a0001;
-        public static final int menu=0x7f0a0042;
-        public static final int menu_holder=0x7f0a008c;
-        public static final int menu_settings=0x7f0a0098;
-        public static final int message=0x7f0a0053;
-        public static final int more=0x7f0a0026;
-        public static final int name=0x7f0a001f;
-        public static final int newGameMenuGameSizeSpinner=0x7f0a000b;
-        public static final int new_password=0x7f0a0086;
-        public static final int newgame_check=0x7f0a0083;
-        public static final int num_items=0x7f0a0090;
-        public static final int offline_error=0x7f0a004e;
-        public static final int offline_error_underline=0x7f0a004f;
-        public static final int password=0x7f0a002a;
-        public static final int password_box=0x7f0a0089;
-        public static final int password_error=0x7f0a0029;
-        public static final int pause_menu=0x7f0a0016;
-        public static final int pausemenu_quitButton=0x7f0a0018;
-        public static final int pausemenu_resumeButton=0x7f0a0017;
-        public static final int paypal=0x7f0a003f;
-        public static final int pic=0x7f0a001e;
-        public static final int playButton=0x7f0a0015;
-        public static final int points=0x7f0a001a;
-        public static final int popup_bottom_half=0x7f0a0037;
-        public static final int popup_header=0x7f0a006a;
-        public static final int popup_top_half=0x7f0a0034;
+        public static final int menu=0x7f0a0043;
+        public static final int menu_holder=0x7f0a008d;
+        public static final int menu_settings=0x7f0a0099;
+        public static final int message=0x7f0a0054;
+        public static final int more=0x7f0a0027;
+        public static final int name=0x7f0a0020;
+        public static final int newGameMenuGameSizeSpinner=0x7f0a000c;
+        public static final int new_password=0x7f0a0087;
+        public static final int newgame_check=0x7f0a0084;
+        public static final int num_items=0x7f0a0091;
+        public static final int offline_error=0x7f0a004f;
+        public static final int offline_error_underline=0x7f0a0050;
+        public static final int password=0x7f0a002b;
+        public static final int password_box=0x7f0a008a;
+        public static final int password_error=0x7f0a002a;
+        public static final int pause_menu=0x7f0a0017;
+        public static final int pausemenu_quitButton=0x7f0a0019;
+        public static final int pausemenu_resumeButton=0x7f0a0018;
+        public static final int paypal=0x7f0a0040;
+        public static final int pic=0x7f0a001f;
+        public static final int playButton=0x7f0a0016;
+        public static final int points=0x7f0a001b;
+        public static final int popup_bottom_half=0x7f0a0038;
+        public static final int popup_header=0x7f0a006b;
+        public static final int popup_top_half=0x7f0a0035;
         public static final int previewButton=0x7f0a0005;
-        public static final int previewImageView=0x7f0a0006;
-        public static final int price=0x7f0a008f;
-        public static final int profile_pic=0x7f0a0052;
-        public static final int progressbar=0x7f0a005d;
-        public static final int publisher=0x7f0a0020;
-        public static final int purchase=0x7f0a007b;
-        public static final int rank=0x7f0a005b;
-        public static final int recommended_app_holder=0x7f0a0050;
-        public static final int recommended_app_holder_underline=0x7f0a0051;
-        public static final int reply=0x7f0a0091;
-        public static final int right_side_holder=0x7f0a003d;
-        public static final int save=0x7f0a006e;
-        public static final int score=0x7f0a005c;
-        public static final int search=0x7f0a007c;
-        public static final int search_swarm=0x7f0a005a;
-        public static final int selectedImageView=0x7f0a000c;
-        public static final int send=0x7f0a0092;
-        public static final int set_pass=0x7f0a0088;
-        public static final int set_password_box=0x7f0a0084;
-        public static final int share=0x7f0a0022;
-        public static final int share_settings=0x7f0a0080;
-        public static final int sheader=0x7f0a0045;
-        public static final int sheader_btn1=0x7f0a0048;
-        public static final int sheader_btn1_dropdown=0x7f0a004a;
-        public static final int sheader_btn1_text=0x7f0a0049;
-        public static final int sheader_btn2=0x7f0a004b;
-        public static final int sheader_btn2_dropdown=0x7f0a004d;
-        public static final int sheader_btn2_text=0x7f0a004c;
-        public static final int sheader_icon=0x7f0a0046;
-        public static final int sheader_title=0x7f0a0047;
-        public static final int show_location=0x7f0a006f;
-        public static final int social_accounts=0x7f0a007d;
-        public static final int speech_bubble=0x7f0a0093;
-        public static final int spinner=0x7f0a005e;
-        public static final int submit=0x7f0a0068;
-        public static final int success=0x7f0a0069;
-        public static final int swarm_login=0x7f0a0060;
-        public static final int tableRow1=0x7f0a000d;
-        public static final int tableRow2=0x7f0a000e;
-        public static final int tableRow3=0x7f0a0012;
-        public static final int tableRow4=0x7f0a0013;
-        public static final int tapjoy=0x7f0a003e;
-        public static final int terms=0x7f0a002f;
-        public static final int text=0x7f0a005f;
-        public static final int textView1=0x7f0a0008;
-        public static final int title=0x7f0a001b;
-        public static final int title_holder=0x7f0a0025;
-        public static final int triangle=0x7f0a0061;
-        public static final int tv_name=0x7f0a0031;
-        public static final int twitter=0x7f0a0058;
-        public static final int twitter_check=0x7f0a0059;
-        public static final int twitter_login=0x7f0a0063;
-        public static final int username=0x7f0a0028;
-        public static final int username_edit=0x7f0a0072;
-        public static final int username_error=0x7f0a0027;
-        public static final int wallet=0x7f0a0040;
-        public static final int webview=0x7f0a0097;
+        public static final int previewImageView=0x7f0a0007;
+        public static final int price=0x7f0a0090;
+        public static final int profile_pic=0x7f0a0053;
+        public static final int progressbar=0x7f0a005e;
+        public static final int publisher=0x7f0a0021;
+        public static final int purchase=0x7f0a007c;
+        public static final int rank=0x7f0a005c;
+        public static final int recommended_app_holder=0x7f0a0051;
+        public static final int recommended_app_holder_underline=0x7f0a0052;
+        public static final int reply=0x7f0a0092;
+        public static final int right_side_holder=0x7f0a003e;
+        public static final int save=0x7f0a006f;
+        public static final int score=0x7f0a005d;
+        public static final int search=0x7f0a007d;
+        public static final int search_swarm=0x7f0a005b;
+        public static final int selectedImageView=0x7f0a000d;
+        public static final int send=0x7f0a0093;
+        public static final int set_pass=0x7f0a0089;
+        public static final int set_password_box=0x7f0a0085;
+        public static final int share=0x7f0a0023;
+        public static final int share_settings=0x7f0a0081;
+        public static final int sheader=0x7f0a0046;
+        public static final int sheader_btn1=0x7f0a0049;
+        public static final int sheader_btn1_dropdown=0x7f0a004b;
+        public static final int sheader_btn1_text=0x7f0a004a;
+        public static final int sheader_btn2=0x7f0a004c;
+        public static final int sheader_btn2_dropdown=0x7f0a004e;
+        public static final int sheader_btn2_text=0x7f0a004d;
+        public static final int sheader_icon=0x7f0a0047;
+        public static final int sheader_title=0x7f0a0048;
+        public static final int show_location=0x7f0a0070;
+        public static final int social_accounts=0x7f0a007e;
+        public static final int speech_bubble=0x7f0a0094;
+        public static final int spinner=0x7f0a005f;
+        public static final int stopwatchView1=0x7f0a0006;
+        public static final int submit=0x7f0a0069;
+        public static final int success=0x7f0a006a;
+        public static final int swarm_login=0x7f0a0061;
+        public static final int tableRow1=0x7f0a000e;
+        public static final int tableRow2=0x7f0a000f;
+        public static final int tableRow3=0x7f0a0013;
+        public static final int tableRow4=0x7f0a0014;
+        public static final int tapjoy=0x7f0a003f;
+        public static final int terms=0x7f0a0030;
+        public static final int text=0x7f0a0060;
+        public static final int textView1=0x7f0a0009;
+        public static final int title=0x7f0a001c;
+        public static final int title_holder=0x7f0a0026;
+        public static final int triangle=0x7f0a0062;
+        public static final int tv_name=0x7f0a0032;
+        public static final int twitter=0x7f0a0059;
+        public static final int twitter_check=0x7f0a005a;
+        public static final int twitter_login=0x7f0a0064;
+        public static final int username=0x7f0a0029;
+        public static final int username_edit=0x7f0a0073;
+        public static final int username_error=0x7f0a0028;
+        public static final int wallet=0x7f0a0041;
+        public static final int webview=0x7f0a0098;
     }
     public static final class layout {
         public static final int activity_main_menu=0x7f030000;
@@ -608,4 +628,52 @@ public final class R {
         public static final int profile_pic=0x7f070006;
         public static final int row=0x7f070001;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a StopwatchView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #StopwatchView_paintColor com.kmrowiec.puzzlegame:paintColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #StopwatchView_textSize com.kmrowiec.puzzlegame:textSize}</code></td><td></td></tr>
+           </table>
+           @see #StopwatchView_paintColor
+           @see #StopwatchView_textSize
+         */
+        public static final int[] StopwatchView = {
+            0x7f010000, 0x7f010001
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.kmrowiec.puzzlegame.R.attr#paintColor}
+          attribute's value can be found in the {@link #StopwatchView} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:paintColor
+        */
+        public static final int StopwatchView_paintColor = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.kmrowiec.puzzlegame.R.attr#textSize}
+          attribute's value can be found in the {@link #StopwatchView} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:textSize
+        */
+        public static final int StopwatchView_textSize = 1;
+    };
 }

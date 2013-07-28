@@ -24,6 +24,11 @@
             android:onClick="inGameButtonsOnClick"
             android:text="HELP" />
 
+        <com.kmrowiec.puzzlegame.StopwatchView
+            android:id="@+id/stopwatchView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
     </FrameLayout>
 
     <FrameLayout

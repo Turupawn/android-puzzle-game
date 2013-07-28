@@ -2,20 +2,18 @@ package com.kmrowiec.puzzlegame;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.Timer;
+import java.util.TimerTask;
 
-import com.swarmconnect.SwarmActivity;
-
-import android.app.Activity;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
-import android.view.Display;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window;
@@ -26,6 +24,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ViewSwitcher;
 
+import com.swarmconnect.SwarmActivity;
+
 public class PuzzleActivity extends SwarmActivity {
 
 	public static final int DIALOG_PAUSED_ID = 44;
@@ -35,6 +35,14 @@ public class PuzzleActivity extends SwarmActivity {
 	Bitmap sourceImage;
 	
 	ViewSwitcher inGameViewSwitcher;
+	
+	TimerTask mTimerTask;
+	final Handler handler = new Handler();
+	Timer t = new Timer();
+	
+	StopwatchView stop_watch_view;
+	
+	String game_size;
 	
 	private class PauseDialog extends Dialog implements android.view.View.OnClickListener{
 		
@@ -95,10 +103,27 @@ public class PuzzleActivity extends SwarmActivity {
         
         //now the fun begins :>
         
+        Dimension dimension = decodeGameSizeFromIntent();
+        
+        stop_watch_view = (StopwatchView) findViewById(R.id.stopwatchView1);
+        stop_watch_view.setTextSize(70);
+        stop_watch_view.setColor(Color.GRAY);
+        
         //Crating a game board.
-        board = new GameBoard(decodeGameSizeFromIntent(),
+        
+        int leaderboard_id = -1;
+        if(game_size.equals("easy modo"))
+        	leaderboard_id=10938;
+        else if(game_size.equals("small"))
+        	leaderboard_id=10940;
+        else if(game_size.equals("medium"))
+        	leaderboard_id=10942;
+        else if(game_size.equals("large"))
+        	leaderboard_id=10944;
+        
+        board = new GameBoard(dimension,
         		(RelativeLayout) findViewById(R.id.centerLayout), 
-        		screenOrientation, this);
+        		screenOrientation, this,stop_watch_view,leaderboard_id);
         
         if(MainMenuActivity.selected_image_int==1)
         	sourceImage = BitmapFactory.decodeResource(getResources(),R.drawable.stage1);
@@ -121,7 +146,9 @@ public class PuzzleActivity extends SwarmActivity {
         
         PuzzleCreator creator = new PuzzleCreator(sourceImage, board);
         board.loadTiles(creator.createPuzzle());
-        board.drawBoard();     
+        board.drawBoard();
+        
+        stop_watch_view.play();
     }
 
     @Override
@@ -138,10 +165,26 @@ public class PuzzleActivity extends SwarmActivity {
     	
     	String[] gameSizes = getResources().getStringArray(R.array.gamesizes);
     	
-    	if(str.equals(gameSizes[0])) size = new Dimension(2,3);
-    	else if(str.equals(gameSizes[1])) size = new Dimension(3,5);
-    	else if(str.equals(gameSizes[2])) size = new Dimension(4,7);
-    	else if(str.equals(gameSizes[3])) size = new Dimension(6,10);
+    	if(str.equals(gameSizes[0]))
+    	{
+    		size = new Dimension(2,3);
+    		game_size = "easy modo";
+    	}
+    	else if(str.equals(gameSizes[1]))
+    	{
+    		size = new Dimension(3,5);
+    		game_size = "small";
+    	}
+    	else if(str.equals(gameSizes[2]))
+    	{
+    		size = new Dimension(4,7);
+    		game_size = "medium";
+    	}
+    	else if(str.equals(gameSizes[3]))
+    	{
+    		size = new Dimension(6,10);
+    		game_size = "large";
+    	}
     	else
     		throw new RuntimeException("Decoding game size from intent failed. String does not match.");
     	
@@ -207,5 +250,4 @@ public class PuzzleActivity extends SwarmActivity {
 			break;
 		}
 	}
-    
 }

@@ -2,8 +2,11 @@ package com.kmrowiec.puzzlegame;
 
 import java.util.ArrayList;
 
+import com.swarmconnect.SwarmLeaderboard;
+
 import android.app.AlertDialog;
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.util.Log;
 import android.view.Display;
@@ -37,12 +40,17 @@ public class GameBoard implements OnClickListener{
 	
 	private GameTile[][] tiles;
 	private GameTile currentTile;
+	StopwatchView stop_watch_view;
 	
-	public GameBoard(Dimension gameSize, RelativeLayout scr, int orientation, Context con){
+	int leaderboard_id;
+	
+	public GameBoard(Dimension gameSize, RelativeLayout scr, int orientation, Context con,StopwatchView stop_watch_view,int leaderboard_id){
 		this.gameSize = gameSize;
 		this.screen = scr;
 		this.context = con;
 		this.orientation = orientation;
+		this.stop_watch_view=stop_watch_view;
+		this.leaderboard_id=leaderboard_id;
 		
 		//If orientatnion is horizontal, we need to flip gameSize.
 		if(orientation==ORIENTATION_HORIZONTAL){
@@ -215,6 +223,8 @@ public class GameBoard implements OnClickListener{
 		moveTileToEmpty(clickedTile);
 		
 		if(isSolved()){
+			stop_watch_view.stop();
+			SwarmLeaderboard.submitScore(leaderboard_id, stop_watch_view.getScore());
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
 			builder.setMessage("You solved the puzzle! Congratulations!")
 			       .setCancelable(false)
